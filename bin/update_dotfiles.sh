@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Define the directory where the new dotfiles are located (relative to the script)
-DOTFILES_DIR="./dotfiles"
+DOTFILES_DIR="./../dotfiles"
 
 # Define the CSV file that maps dotfiles to their paths
-CSV_FILE="./paths.csv"
+CSV_FILE="./../paths.csv"
 
 # Check if the dotfiles directory exists
 if [ ! -d "$DOTFILES_DIR" ]; then
