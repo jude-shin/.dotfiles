@@ -18,15 +18,6 @@ if [ ! -f "$CSV_FILE" ]; then
   exit 1
 fi
 
-# Parse command line arguments
-if [ $# -gt 0 ]; then
-  # If there are command-line arguments, filter by the specified files
-  DOTFILES_TO_INSTALL=("$@")
-else
-  # Otherwise, install all dotfiles interactively (from the CSV file)
-  DOTFILES_TO_INSTALL=($(awk -F',' 'NR>1 {print $1}' "$CSV_FILE"))
-fi
-
 # Function to copy files recursively
 copy_files_recursively() {
   local src_dir="$1"
@@ -46,6 +37,28 @@ copy_files_recursively() {
     fi
   done
 }
+
+# Display the help message if --help is passed
+if [[ "$1" == "--help" ]]; then
+  echo "Usage: $0 [options]"
+  echo ""
+  echo "Options:"
+  echo "  --help            Show this help message"
+  echo "  <dotfile>         Specify one or more dotfiles to install (interactive)"
+  echo ""
+  echo "Available dotfiles from CSV:"
+  awk -F',' 'NR>1 {print $1}' "$CSV_FILE"
+  exit 0
+fi
+
+# Parse command line arguments
+if [ $# -gt 0 ]; then
+  # If there are command-line arguments, filter by the specified files (not including --help)
+  DOTFILES_TO_INSTALL=("$@")
+else
+  # Otherwise, install all dotfiles interactively (from the CSV file)
+  DOTFILES_TO_INSTALL=($(awk -F',' 'NR>1 {print $1}' "$CSV_FILE"))
+fi
 
 # Loop through each file in the DOTFILES_TO_INSTALL list
 for dotfile in "${DOTFILES_TO_INSTALL[@]}"; do
