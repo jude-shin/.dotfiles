@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/jude/.config/kitty'
+let g:netrw_dirhist_6='/home/jude/.config'
+let g:netrw_dirhist_5='/home/jude/.config/hypr'
+let g:netrw_dirhist_4='/home/jude/.config/vim/plugged'
+let g:netrw_dirhist_3='/home/jude/.config/vim'
+let g:netrw_dirhist_2='/home/jude/.config/hypr'
+let g:netrw_dirhist_1='/home/jude/.config/pulse'
+let g:netrw_dirhist_0='/home/jude/.config'
+let g:netrw_dirhist_9='/home/jude/.dotfiles'
+let g:netrw_dirhist_8='/home/jude/projects/personal/portfolio/public'
