@@ -1,6 +1,6 @@
 file,path
-bashrc,~/.bashrc
-hyprland,~/.config/hypr/
+.bashrc,~/.bashrc
+hypr,~/.config/hypr/
 kitty,~/.config/kitty/
 tmux,~/.config/tmux
 vim,~/.config/vim/
