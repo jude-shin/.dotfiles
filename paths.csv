@@ -1,8 +1,8 @@
-file,path
-.bashrc,~/.bashrc
-hypr,~/.config/hypr/
-kitty,~/.config/kitty/
-tmux,~/.config/tmux
-vim,~/.config/vim/
-waybar,~/.config/waybar/
-wofi,~/.config/wofi/
+name,new,path
+bashrc,.bashrc,~/.bashrc
+hyprland,hypr/,~/.config/hypr/
+kitty,kitty/,~/.config/kitty/
+tmux,tmux,~/.config/tmux
+vim,vim/,~/.config/vim/
+waybar,waybar/,~/.config/waybar/
+wofi,wofi/,~/.config/wofi/
