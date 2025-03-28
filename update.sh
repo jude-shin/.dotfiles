@@ -45,26 +45,49 @@ function CONFIRM_INSTALL {
     done
 }
 
-# Read the CSV into an array using mapfile
+# ------------------------------------------
+
 mapfile -t lines < "$CSV_PATH"
 
-# Process each line after the header (skip the first line)
-for ((i = 1; i < ${#lines[@]}; i++)); do
-    # Read each line and split by comma
-    line="${lines[$i]}"
-    name=$(echo "$line" | cut -d',' -f1 | xargs)
-    new=$(echo "$line" | cut -d',' -f2 | xargs)
-    path=$(echo "$line" | cut -d',' -f3 | xargs)
+if [ $# -eq 0 ]; then
+	for ((i = 1; i < ${#lines[@]}; i++)); do
+		echo ""
 
-    # Skip empty lines
-    if [[ -z "$name" || -z "$new" || -z "$path" ]]; then
-        continue
-    fi
+		line="${lines[$i]}"
+		name=$(echo "$line" | cut -d',' -f1 | xargs)
+		new=$(echo "$line" | cut -d',' -f2 | xargs)
+		path=$(echo "$line" | cut -d',' -f3 | xargs)
 
-    # Debug: Print the line read from CSV
-    echo "Reading: $name, $new, $path"  # Debug: Show CSV line
+		if [[ -z "$name" || -z "$new" || -z "$path" ]]; then
+			continue
+		fi
 
-    # Now process the remaining lines
-    INSTALL_DOTFILE "$name" "$new" "$path"
-done
+		echo "Reading: $name, $new, $path"  # Debug: Show CSV line
+
+		INSTALL_DOTFILE "$name" "$new" "$path"
+	done
+else 
+	# there are arguments
+	for arg_name in "$@"; do
+		echo ""
+
+		for ((i = 1; i < ${#lines[@]}; i++)); do
+			line="${lines[$i]}"
+			name=$(echo "$line" | cut -d',' -f1 | xargs)
+			new=$(echo "$line" | cut -d',' -f2 | xargs)
+			path=$(echo "$line" | cut -d',' -f3 | xargs)
+
+			if [[ -z "$name" || -z "$new" || -z "$path" ]]; then
+				continue
+			fi
+			
+			if [ "$arg_name" == "$name" ]; then 
+				INSTALL_DOTFILE "$name" "$new" "$path"
+				continue 2
+			fi
+		done
+		echo "'$arg_name' does not exsist..."
+	done
+fi
+
 
