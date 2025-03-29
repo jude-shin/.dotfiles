@@ -46,4 +46,4 @@ eval "$(fzf --bash)"
 #### AUTOSTART ####
 ###################
 clear
-cal -5
+cal -3
