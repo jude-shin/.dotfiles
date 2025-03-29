@@ -20,9 +20,6 @@ function INSTALL_DOTFILE {
 	elif [ $confirm_status -eq 1 ]; then
 		# the user wants to install this, so go ahead and install it
 		echo "INSTALLING new $name dotfile..."
-
-		# make a backup of the file in the same location, just with a .bak or something
-		# overwrite the file(s) that are in the directory $NEW_PATH + $new
 		
 		# Expand ~ to full home directory path
 		path=$(eval echo "$path")
@@ -56,8 +53,7 @@ function INSTALL_DOTFILE {
 				cp "$src_file" "$dest_file"
 			done
 	else
-
-		# If it's a single file, back it up and install as before
+		# If it's a single file, back it up and install 
 		if [ -f "$path" ]; then
 			echo "Backing up existing file at $path to $path.bak"
 			cp "$path" "$path.bak"
