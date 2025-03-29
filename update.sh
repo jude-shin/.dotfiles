@@ -50,6 +50,7 @@ function CONFIRM_INSTALL {
 mapfile -t lines < "$CSV_PATH"
 
 if [ $# -eq 0 ]; then
+	# there are no arguments (do a full upgrade)
 	for ((i = 1; i < ${#lines[@]}; i++)); do
 		echo ""
 
@@ -61,8 +62,6 @@ if [ $# -eq 0 ]; then
 		if [[ -z "$name" || -z "$new" || -z "$path" ]]; then
 			continue
 		fi
-
-		echo "Reading: $name, $new, $path"  # Debug: Show CSV line
 
 		INSTALL_DOTFILE "$name" "$new" "$path"
 	done
