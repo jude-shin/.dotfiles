@@ -12,13 +12,13 @@ Arch Linux on Hyprland
 - Bash, Hyprland, Hyprlock, Hyperpaper, Kitty, Tmux, Vim, Waybar, Wofi
 
 ## NOTE:
-**Hyprpaper:** 
-    - may need some pictures to be updated
-    - TODO: make a folder with the pictures that are locally stored on this repo
+#### **Hyprpaper:** 
+- may need some pictures to be updated
+- TODO: make a folder with the pictures that are locally stored on this repo
 
-**Vim:**
-    - you may need to build the vim-plug from the rc afterwards
-    - yay -S vim-plug
+#### **Vim:**
+- you may need to build the vim-plug from the rc afterwards
+- yay -S vim-plug
 
 ## Dependencies:
     bash, hyprland, hyprlock, hyprpaper, kitty, tmux, vim, vim-plug, waybar, wofi
