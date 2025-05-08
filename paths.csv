@@ -1,9 +1,0 @@
-name, new, path
-bashrc, .bashrc, ~/.bashrc
-hyprland, hypr/, ~/.config/hypr/
-kitty, kitty/, ~/.config/kitty/
-tmux, tmux.conf, ~/.config/tmux/tmux.conf
-vim, vim/, ~/.config/vim/
-waybar, waybar/, ~/.config/waybar/
-wofi, wofi/, ~/.config/wofi/
-
