@@ -4,26 +4,26 @@
 
 # List of original dotfiles (to be symlinked) - e.g., dotfiles repo
 SOURCE_DIRS=(
-	"$HOME/dotfiles/.bashrc"
-	"$HOME/dotfiles/vim/"
-	"$HOME/dotfiles/tmux/"
-	"$HOME/dotfiles/waybar/"
-	"$HOME/dotfiles/wofi/"
-	"$HOME/dotfiles/kitty/"
-	"$HOME/dotfiles/i3/"
-	"$HOME/dotfiles/hypr/"
+	"$HOME/.dotfiles/.bashrc"
+	"$HOME/.dotfiles/vim/"
+	"$HOME/.dotfiles/tmux/"
+	"$HOME/.dotfiles/waybar/"
+	"$HOME/.dotfiles/wofi/"
+	"$HOME/.dotfiles/kitty/"
+	"$HOME/.dotfiles/i3/"
+	"$HOME/.dotfiles/hypr/"
 )
 
 # List of destination targets (e.g., real home locations)
 TARGET_DIRS=(
 	"$HOME/.bashrc"
-	"$HOME/.config/vim/"
-	"$HOME/.config/tmux/"
-	"$HOME/.config/waybar/"
-	"$HOME/.config/wofi/"
-	"$HOME/.config/kitty/"
-	"$HOME/.config/i3/"
-	"$HOME/.config/hypr/"
+	"$HOME/.config/vim"
+	"$HOME/.config/tmux"
+	"$HOME/.config/waybar"
+	"$HOME/.config/wofi"
+	"$HOME/.config/kitty"
+	"$HOME/.config/i3"
+	"$HOME/.config/hypr"
 )
 
 # Backup directory
