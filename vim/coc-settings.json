@@ -1,0 +1,11 @@
+{
+  "languageserver": {
+    "racket": {
+      "command": "racket",
+      "args": ["-l", "racket-langserver"],
+      "filetypes": ["racket"]
+    }
+  },
+	"suggest.noselect": true
+}
+
