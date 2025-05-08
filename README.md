@@ -1,15 +1,13 @@
 # .dotfiles
 
-Arch Linux on Hyprland
+Arch Linux on Hyprland (i3 fallback)
 
 ## How To Use (for future self)
-#### Update all 
-./update
-#### Update Specific
-./update kitty tmux
+if you are just setting up, then you have to make a bunch of symlinks in the .config folder or wherever you are sourcing. 
+you are basically going to point all of your system's dotfiles to this git repo
 
-## Applications Tracked
-- Bash, Hyprland, Hyprlock, Hyperpaper, Kitty, Tmux, Vim, Waybar, Wofi
+ln -s "$HOME/.dotfiles/i3/" "$HOME/.config/i3"
+
 
 ## NOTE:
 #### **Hyprpaper:** 
@@ -21,4 +19,4 @@ Arch Linux on Hyprland
 - yay -S vim-plug
 
 ## Dependencies:
-    bash, hyprland, hyprlock, hyprpaper, kitty, tmux, vim, vim-plug, waybar, wofi
+    bash, hyprland, hyprlock, hyprpaper, kitty, tmux, vim, vim-plug, waybar, wofi, i3
