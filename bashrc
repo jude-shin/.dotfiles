@@ -29,6 +29,17 @@ alias super='~/bin/super.sh'
 # alias run='~/bin/run.sh'
 alias schoolvpn='~/bin/schoolvpn.sh'
 
+# git
+alias gd='git diff'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gu='git pull'
+alias gl='git log'
+alias gb='git branch'
+alias gi='git init'
+
+
 ##########################
 #### ENVIRONMENT VARS ####
 ##########################

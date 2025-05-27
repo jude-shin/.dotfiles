@@ -10,9 +10,9 @@ cnoremap kj <C-C>
 " " ALE NEXT ERROR
 " nnoremap <C-k> :ALENextWrap<CR>
 " COC TAB COMPLETION
-inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-r>=coc#refresh()\<CR>"
+" inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-r>=coc#refresh()\<CR>"
 " inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : coc#refresh()
-inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<Tab>"
+" inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<Tab>"
 
 " TERMINAL REMAP
 " nnoremap <C-j> :terminal<CR>

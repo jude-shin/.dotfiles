@@ -2,6 +2,10 @@ filetype plugin on
 filetype indent on
 syntax on
 
+" saves folds and loads folds automatically
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+
 " relative line numbers
 set relativenumber
 set invnumber 

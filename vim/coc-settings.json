@@ -6,6 +6,6 @@
       "filetypes": ["racket"]
     }
   },
-	"suggest.noselect": true
+  "suggest.noselect": true
 }
 
