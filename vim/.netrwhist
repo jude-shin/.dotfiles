@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/jude/school/cal_poly/spring_2025/csc_307/CSC307_A05_PlanitPoker/src/main/java/planitpoker/mqtt'
 let g:netrw_dirhist_9='/home/jude/.dotfiles/vim/modules'
 let g:netrw_dirhist_8='/home/jude/.dotfiles/vim/plugged/coc.nvim'
 let g:netrw_dirhist_7='/home/jude/.dotfiles/vim/plugged'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_4='/home/jude/school/cal_poly/spring_2025/csc_430/assignment
 let g:netrw_dirhist_3='/home/jude/school/cal_poly/spring_2025/csc_307/labs/lab7-pong/src/main/java/org/both'
 let g:netrw_dirhist_2='/home/jude/school/cal_poly/spring_2025/csc_307/labs/lab7-pong/src/main/java/org'
 let g:netrw_dirhist_1='/home/jude/school/cal_poly/spring_2025/csc_307/labs/lab7-pong/src/main/java/org/both2'
-let g:netrw_dirhist_0='/home/jude/school/cal_poly/spring_2025/csc_307/labs/lab7-pong/src/main/java/org/both'
