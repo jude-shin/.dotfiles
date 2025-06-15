@@ -63,6 +63,7 @@ setlocal formatexpr=
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal formatoptions=tcqr
 setlocal formatprg=raco\ fmt
+setlocal grepformat=
 setlocal grepprg=
 setlocal iminsert=0
 setlocal imsearch=-1
@@ -143,13 +144,12 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 37 - ((36 * winheight(0) + 35) / 71)
+let s:l = 83 - ((43 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 37
-normal! 0
+keepjumps 83
+normal! 043|
 let &g:so = s:so_save | let &g:siso = s:siso_save
-nohlsearch
 doautoall SessionLoadPost
 " vim: set ft=vim :

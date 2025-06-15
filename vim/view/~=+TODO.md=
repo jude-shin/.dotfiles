@@ -71,6 +71,7 @@ setlocal formatexpr=
 setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\|^\\s*[-*+]\\s\\+\\|^\\[^\\ze[^\\]]\\+\\]:\\&^.\\{4\\}
 setlocal formatoptions=tcqln
 setlocal formatprg=
+setlocal grepformat=
 setlocal grepprg=
 setlocal iminsert=0
 setlocal imsearch=-1
@@ -79,8 +80,10 @@ setlocal includeexpr=
 setlocal indentexpr=
 setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
 setlocal noinfercase
+setlocal isexpand=
 setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
+setlocal lhistory=10
 setlocal nolinebreak
 setlocal nolisp
 setlocal lispoptions=
@@ -149,13 +152,12 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 8 - ((7 * winheight(0) + 36) / 72)
+let s:l = 35 - ((34 * winheight(0) + 35) / 71)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 8
-normal! 033|
+keepjumps 35
+normal! 0
 let &g:so = s:so_save | let &g:siso = s:siso_save
-nohlsearch
 doautoall SessionLoadPost
 " vim: set ft=vim :
