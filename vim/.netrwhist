@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/jude/.dotfiles/hypr'
 let g:netrw_dirhist_2='/home/jude/.dotfiles/tmux'
 let g:netrw_dirhist_1='/home/jude/school/cal_poly/spring_2025/csc_307/CSC307_A05_PlanitPoker/src/main/java/planitpoker/mqtt'
 let g:netrw_dirhist_0='/home/jude/school/cal_poly/spring_2025/csc_307/CSC307_A05_PlanitPoker/src/main/java/planitpoker'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_7='/home/jude/school/cal_poly/spring_2025/csc_430/CSC430-A8/
 let g:netrw_dirhist_6='/home/jude/school/cal_poly/spring_2025/csc_430/CSC430-A8/src'
 let g:netrw_dirhist_5='/home/jude/school/cal_poly/spring_2025/csc_430/CSC430-A8/build'
 let g:netrw_dirhist_4='/home/jude/school/cal_poly/spring_2025/csc_430/CSC430-A8'
-let g:netrw_dirhist_3='/home/jude/school/cal_poly/spring_2025/csc_307/CSC307_A05_PlanitPoker/src/main/resources'
