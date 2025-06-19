@@ -25,8 +25,6 @@ alias lock='hyprlock -q'
 alias image='kitten icat'
 
 # PERSONAL SCRIPTS 
-alias super='~/bin/super.sh'
-# alias run='~/bin/run.sh'
 alias schoolvpn='~/bin/schoolvpn.sh'
 
 # git
