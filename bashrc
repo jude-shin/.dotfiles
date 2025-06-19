@@ -39,6 +39,8 @@ alias gl='git log'
 alias gb='git branch'
 alias gi='git init'
 
+# neomutt
+alias nm='mailsync && neomutt'
 
 ##########################
 #### ENVIRONMENT VARS ####
@@ -59,7 +61,7 @@ eval "$(fzf --bash)"
 ###################
 
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach-session -t term || tmux new-session -s term 
+    tmux attach-session -t general || tmux new-session -s general 
 fi
 
 clear
