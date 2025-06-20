@@ -10,6 +10,9 @@ autocmd BufWinEnter *.* silent loadview
 set relativenumber
 set invnumber 
 
+" diagnostics gutter is always visible
+set signcolumn=yes
+
 " the size of the tabs 
 set autoindent
 set tabstop=2
