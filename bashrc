@@ -59,7 +59,7 @@ eval "$(fzf --bash)"
 ###################
 
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach-session -t term || tmux new-session -s term 
+    tmux attach-session -t server || tmux new-session -s server 
 fi
 
 clear
