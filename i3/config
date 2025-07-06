@@ -40,6 +40,8 @@ exec --no-startup-id xset r rate 150 50
 # wallpaper (feh)
 exec_always --no-startup-id feh --bg-fill $HOME/.dotfiles/wallpapers/field.jpg
 
+exec_always --no-startup-id ./.screenlayout/monitor.sh
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
