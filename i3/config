@@ -37,6 +37,9 @@ exec --no-startup-id nm-applet
 # keyboard repeat rate and delay
 exec --no-startup-id xset r rate 150 50
 
+# mail
+exec --no-startup-id mailsync 
+
 # wallpaper (feh)
 exec_always --no-startup-id feh --bg-fill $HOME/.dotfiles/wallpapers/field.jpg
 
