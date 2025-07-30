@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/storepass/harmony'
+let g:netrw_dirhist_2='/home/storepass/harmony/src/training'
+let g:netrw_dirhist_1='/mnt/usb/Documents'
+let g:netrw_dirhist_0='/home/storepass/harmony/src/data'
+let g:netrw_dirhist_9='/home/storepass/harmony/src'
+let g:netrw_dirhist_8='/home/storepass/harmony/src/cnn'
+let g:netrw_dirhist_7='/home/storepass/.dotfiles/discordcanary'
+let g:netrw_dirhist_6='/home/storepass/.dotfiles'
+let g:netrw_dirhist_5='/home/storepass/harmony/src/processing'
+let g:netrw_dirhist_4='/home/storepass/harmony/src/training'
