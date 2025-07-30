@@ -56,5 +56,4 @@ fi
 "$xterm" -geometry 80x50+494+51 &
 "$xterm" -geometry 80x20+494-0 &
 "$xterm" -geometry 80x66+0+0 -name login &
-xrandr --output eDP-1 --off --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off --output DP-2-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2-2 --off --output DP-2-3 --off &
 exec i3
