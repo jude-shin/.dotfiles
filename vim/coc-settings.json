@@ -1,12 +1,4 @@
 {
-  "languageserver": {
-    "racket": {
-      "command": "racket",
-      "args": ["-l", "racket-langserver"],
-      "filetypes": ["racket"]
-    }
-  },
-
   "python.pythonPath": "/usr/bin/python3",
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
@@ -20,6 +12,5 @@
 	"inlayHint.enable": false,
   "diagnostic.enableVirtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": true
-
 }
 
