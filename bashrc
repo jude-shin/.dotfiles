@@ -1,24 +1,26 @@
-#
-# ~/.bashrc
-#
+# # ~/.bashrc #
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 
-#################
-#### ALIASES ####
-#################
+###############
+#   ALIASES   #
+###############
+# TODO: put this in a different script?
 # common tools
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 # trash-cli
 alias rm='trash-put --verbose'
-alias restore='trash-restore --verbose'
 
-# hyprlock
-alias lock='hyprlock -q'
+# lockscreen 
+if [ "$XDG_SESSION_TYPE" == 'wayland' ]; then
+	alias lock='hyprlock -q'
+elif [ "$XDG_SESSION_TYPE" == 'x11' ]; then
+	alias lock='i3lock'
+fi
 
 # icat
 # for image display in the terminal
@@ -27,22 +29,14 @@ alias image='kitten icat'
 # PERSONAL SCRIPTS 
 alias schoolvpn='~/bin/schoolvpn.sh'
 
-# git
-alias gd='git diff'
-alias ga='git add'
-alias gc='git commit'
-alias gp='git push'
-alias gu='git pull'
-alias gl='git log'
-alias gb='git branch'
-alias gi='git init'
-
 # neomutt
-alias nm='mailsync && neomutt'
+if [ "$USER" == 'jude' ]; then
+	alias nm='mailsync && neomutt'
+fi
 
-##########################
-#### ENVIRONMENT VARS ####
-##########################
+########################
+#   ENVIRONMENT VARS   #
+########################
 export $(envsubst < ~/.env)
 export HISTCONTROL=ignoreboth:erasedups
 export HISTFILESIZE=10000
@@ -51,18 +45,31 @@ export HISTSIZE=10000
 PS1='[\u@\h \W]\$ '
 source /usr/share/nvm/init-nvm.sh
 
-# fzf 
+
+###########
+#   fzf   #
+###########
 eval "$(fzf --bash)"
 
-###################
-#### AUTOSTART ####
-###################
+############
+#   tmux   #
+############
+TMUX_CONF_NAME='base.conf'
 
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach-session -t general || tmux new-session -s general 
+if [ "$USER" == 'jude' ]; then
+	TMUX_CONF_NAME='jude.conf'
+elif [ "$USER" == 'storepass' ]; then
+	TMUX_CONF_NAME='storepass.conf'
 fi
 
-clear
-cal -3
+TMUX_CONFIG_PATH="$XDG_CONFIG_HOME/tmux/$TMUX_CONF_NAME"
+tmux -f "$TMUX_CONFIG_PATH" attach-session -t general|| tmux -f "$TMUX_CONFIG_PATH" new-session -s general
+
+
+#################
+#   AUTOSTART   #
+#################
+# clear
+# cal -3
 
 
