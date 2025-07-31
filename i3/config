@@ -31,20 +31,22 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # use Autorandr to configure outputs
-exec --no-startup-id autorandr --change
+# have the wallpaper load only after the screens are configured
+
+# Wallpaper (feh)
+# exec_always --no-startup-id feh --bg-fill $HOME/.dotfiles/wallpapers/field.jpg
+
+exec --no-startup-id autorandr --change && feh --bg-fill $HOME/.dotfiles/wallpapers/field.jpg
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
 # Keyboard repeat rate and delay
-exec --no-startup-id xset r rate 150 50
+exec_always --no-startup-id xset r rate 150 50
 
 # Mail
 exec --no-startup-id mailsync 
-
-# Wallpaper (feh)
-exec_always --no-startup-id feh --bg-fill $HOME/.dotfiles/wallpapers/field.jpg
 
 exec_always autotiling
 
