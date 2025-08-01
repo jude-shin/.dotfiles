@@ -11,6 +11,7 @@ SOURCE_DIRS=(
 	"$HOME/.dotfiles/wofi/"
 	"$HOME/.dotfiles/kitty/"
 	"$HOME/.dotfiles/i3/"
+	"$HOME/.dotfiles/i3status/"
 	"$HOME/.dotfiles/hypr/"
 )
 
@@ -23,6 +24,7 @@ TARGET_DIRS=(
 	"$HOME/.config/wofi"
 	"$HOME/.config/kitty"
 	"$HOME/.config/i3"
+	"$HOME/.config/i3status"
 	"$HOME/.config/hypr"
 )
 
