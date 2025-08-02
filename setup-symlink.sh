@@ -4,7 +4,7 @@
 
 # List of original dotfiles (to be symlinked) - e.g., dotfiles repo
 SOURCE_DIRS=(
-	"$HOME/.dotfiles/.bashrc"
+	"$HOME/.dotfiles/bashrc"
 	"$HOME/.dotfiles/vim/"
 	"$HOME/.dotfiles/tmux/"
 	"$HOME/.dotfiles/waybar/"
