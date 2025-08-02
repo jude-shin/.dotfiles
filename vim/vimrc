@@ -1,8 +1,8 @@
 runtime! archlinux.vim
 
 runtime ./modules/general.vim
-runtime ./modules/highlight.vim
 runtime ./modules/keybinds.vim
 runtime ./modules/filetype.vim
 runtime ./modules/plugins.vim
-runtime ./modules/terminal.vim
+" runtime ./modules/terminal.vim
+" runtime ./modules/highlight.vim

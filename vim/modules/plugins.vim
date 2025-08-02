@@ -3,7 +3,10 @@ call plug#begin('~/.config/vim/plugged/')
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Olical/conjure'
+Plug 'flazz/vim-colorschemes'
 call plug#end()
+
+" ----- VIM-COLORSCHEMES
 
 " ----- MARKDOWN PREVIEW ---------------------------------------------
 let g:mkdp_auto_start = 1
