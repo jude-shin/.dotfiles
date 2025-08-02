@@ -1,3 +1,6 @@
+" NOTE: this is old and I don't use this any more
+" TODO: remove this at some point once you get the colorscheme.vim module to work
+
 
 " " HIGHLIGHT CONTRAST that looks good to me 
 " hi Folded cterm=Bold ctermfg=19
@@ -19,10 +22,3 @@
 " " hi vCursor cterm=Bold 
 " " hi cCursor cterm=Bold 
 " " hi vCursor cterm=Bold 
-
-
-highlight Search cterm=reverse
-highlight IncSearch cterm=reverse
-highlight Visual cterm=reverse
-highlight CursorLine cterm=reverse
-
