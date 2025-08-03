@@ -4,6 +4,20 @@
 [[ $- != *i* ]] && return
 
 
+
+if [ "$XDG_SESSION_TYPE" == 'wayland' ]; then
+	# lock
+	alias lock='hyprlock -q'
+elif [ "$XDG_SESSION_TYPE" == 'x11' ]; then
+	# lock
+	alias lock='i3lock'
+	# repeat rate for keyboard
+	xset r rate 150 50
+fi
+
+
+
+
 ###############
 #   ALIASES   #
 ###############
@@ -13,11 +27,6 @@
 alias rm='trash-put --verbose'
 
 # lockscreen 
-if [ "$XDG_SESSION_TYPE" == 'wayland' ]; then
-	alias lock='hyprlock -q'
-elif [ "$XDG_SESSION_TYPE" == 'x11' ]; then
-	alias lock='i3lock'
-fi
 
 # icat: for image display in the terminal
 alias image='kitten icat'
