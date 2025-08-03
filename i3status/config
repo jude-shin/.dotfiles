@@ -8,10 +8,10 @@
 
 general {
 	output_format = "i3bar"
-		colors = true
-#color_good = "#BBBBBB"
-#color_bad = "#CC1616"
-#color_degraded = "#55858E"
+	colors = true
+	color_good = "#BBBBBB"
+	color_bad = "#CC1616"
+	color_degraded = "#55858E"
 }
 
 #order += "ipv6"
@@ -34,11 +34,8 @@ volume master {
 		mixer = "Master"
 		mixer_idx = 0
 		format = "volume: %volume "
-
-
-
-
 }
+
 wireless _first_ {
 	format_up = "W: (%quality at %essid)"
 		format_down = "W: down"
@@ -80,7 +77,7 @@ tztime local {
 }
 
 tztime local2 {
-	format = "%d-%m-20%y"
+	format = "%m-%d-20%y"
 }
 
 load {
@@ -88,11 +85,12 @@ load {
 }
 
 disk "/" {
-	format = "/: %avail"
+    format = "HDD: {available}%"
+    path = "/"
+    threshold_type = "percentage_avail"
+    low_threshold = 10
 }
 
 cpu_usage {
 	format = "cpu: %usage"
-
-
 }
