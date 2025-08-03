@@ -85,12 +85,11 @@ load {
 }
 
 disk "/" {
-    format = "HDD: {available}%"
-    path = "/"
+    format = "HDD: %percentage_avail"
     threshold_type = "percentage_avail"
     low_threshold = 10
 }
 
 cpu_usage {
-	format = "cpu: %usage"
+	format = "CPU: %usage"
 }
