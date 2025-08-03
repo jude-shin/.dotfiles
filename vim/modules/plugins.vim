@@ -6,8 +6,9 @@ Plug 'Olical/conjure' "
 " Plug 'flazz/vim-colorschemes' " does not work
 " Plug 'nightsense/carbonized' " does not work
 " Plug 'sstallion/vim-wtf' " bland
-Plug 'joshdick/onedark.vim'
+" Plug 'joshdick/onedark.vim' " LOOKS GOOD... doesn't look good with kitty theme
 " Plug 'sheerun/vim-polyglot' " for linting of various languages... TODO: remove if it is slow?
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 " ----- VIM-COLORSCHEMES
