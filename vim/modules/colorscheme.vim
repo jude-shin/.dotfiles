@@ -1,16 +1,7 @@
+if (has("termguicolors"))
+	set termguicolors
+endif
 
-
-colorscheme 1989
-
-let &t_ut=''
-
-
-
-
-
-
-
-
-
-
+syntax on
+colorscheme onedark
 

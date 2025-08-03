@@ -2,8 +2,12 @@
 call plug#begin('~/.config/vim/plugged/')
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Olical/conjure'
-Plug 'flazz/vim-colorschemes'
+Plug 'Olical/conjure' " 
+" Plug 'flazz/vim-colorschemes' " does not work
+" Plug 'nightsense/carbonized' " does not work
+" Plug 'sstallion/vim-wtf' " bland
+Plug 'joshdick/onedark.vim'
+" Plug 'sheerun/vim-polyglot' " for linting of various languages... TODO: remove if it is slow?
 call plug#end()
 
 " ----- VIM-COLORSCHEMES
