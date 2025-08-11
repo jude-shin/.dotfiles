@@ -135,9 +135,9 @@ clear # gets rid of the message that I am trying to nest my sessions, which I am
 ##############
 #   JEKYLL   #
 ##############
-eval "$(rbenv init -)"
-export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
+# eval "$(rbenv init -)"
+# export GEM_HOME="$HOME/gems"
+# export PATH="$HOME/gems/bin:$PATH"
 
 
 #################
