@@ -1,8 +1,4 @@
-# # ~/.bashrc #
-
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
+# # ~/.bashrc # # If not running interactively, don't do anything [[ $- != *i* ]] && return
 
 
 if [ "$XDG_SESSION_TYPE" == 'wayland' ]; then
@@ -136,6 +132,13 @@ TMUX_CONFIG_PATH="$XDG_CONFIG_HOME/tmux/$TMUX_CONF_NAME"
 tmux -f "$TMUX_CONFIG_PATH" attach-session -t general || tmux -f "$TMUX_CONFIG_PATH" new-session -s general
 clear # gets rid of the message that I am trying to nest my sessions, which I am not
 
+##############
+#   JEKYLL   #
+##############
+eval "$(rbenv init -)"
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
+
 
 #################
 #   AUTOSTART   #
@@ -143,5 +146,3 @@ clear # gets rid of the message that I am trying to nest my sessions, which I am
 
 clear
 cal -3
-
-
