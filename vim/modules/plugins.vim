@@ -1,17 +1,11 @@
-" vim-plug setup
+" ----- SETUP for vim-plug ---------------------------------------------
 call plug#begin('~/.config/vim/plugged/')
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Olical/conjure' " 
-" Plug 'flazz/vim-colorschemes' " does not work
-" Plug 'nightsense/carbonized' " does not work
-" Plug 'sstallion/vim-wtf' " bland
-" Plug 'joshdick/onedark.vim' " LOOKS GOOD... doesn't look good with kitty theme
 " Plug 'sheerun/vim-polyglot' " for linting of various languages... TODO: remove if it is slow?
 Plug 'morhetz/gruvbox'
 call plug#end()
-
-" ----- VIM-COLORSCHEMES
 
 " ----- MARKDOWN PREVIEW ---------------------------------------------
 let g:mkdp_auto_start = 1
@@ -55,7 +49,3 @@ let g:mkdp_theme = 'dark'
 let g:mkdp_combine_preview = 0
 let g:mkdp_combine_preview_auto_refresh = 1
 
-" ----- ALE ---------------------------------------------
-" let g:ale_lint_on_text_changed = 'normal'
-" let g:ale_lint_on_insert_leave = 1
-" set signcolumn=number "the '>>' in ALE

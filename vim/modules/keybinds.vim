@@ -7,20 +7,23 @@ inoremap kj <esc>
 vnoremap kj <esc>
 cnoremap kj <C-C>
 
-" " ALE NEXT ERROR
-" nnoremap <C-k> :ALENextWrap<CR>
-" COC TAB COMPLETION
-" inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-r>=coc#refresh()\<CR>"
-" inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : coc#refresh()
-" inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<Tab>"
 
-" TERMINAL REMAP
-" nnoremap <C-j> :terminal<CR>
-" tnoremap <C-j> <C-\><C-n>:bd!<CR>
+" TOGGLE coc on and off easily
+" TODO: test this
+function! CocToggle()
+  if exists('g:coc_ready') && g:coc_ready
+    " coc.nvim is enabled, so disable it
+    CocDisable
+    echo "coc.nvim disabled"
+  else
+    " coc.nvim is disabled, so enable it
+    CocEnable
+    echo "coc.nvim enabled"
+  endif
+endfunction
 
-" LINE NUMBER TOGGLE REMAP
-" TODO: doesn't work
-" inoremap `` <Esc>:set nonumber! norelativenumber!<Esc>`q
+nnoremap `` :call CocToggle()<CR>
+inoremap `` <Esc>:call CocToggle()<CR>
 
 " BRACKET COMPLETION
 " inoremap { {}<Esc>ha
