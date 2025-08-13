@@ -7,12 +7,7 @@ if [ "$XDG_SESSION_TYPE" == 'wayland' ]; then
 elif [ "$XDG_SESSION_TYPE" == 'x11' ]; then
 	# lock
 	alias lock='i3lock'
-	# repeat rate for keyboard
-	xset r rate 150 50
 fi
-
-
-
 
 ###############
 #   ALIASES   #
