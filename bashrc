@@ -13,7 +13,6 @@ fi
 #   ALIASES   #
 ###############
 
-# TODO: put aliases in a different script?
 # trash-cli
 alias rm='trash-put --verbose'
 
