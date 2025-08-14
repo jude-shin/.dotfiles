@@ -1,17 +1,33 @@
 #!/bin/bash
-# Script to display Wireless SSID for i3blocks
+# Script to display Wireless SSID and Signal Strength for i3blocks
 
-INTERFACE="wlan0" # <--- IMPORTANT: Change this to your Wireless interface (e.g., wlp2s0)
+INTERFACE="wlan0" # <--- IMPORTANT: Change this to your Wireless interface
 
+# Check if the wireless interface is up and has an ESSID
 if iwconfig $INTERFACE | grep -q "ESSID:\""; then
     SSID=$(iwconfig $INTERFACE | grep "ESSID" | awk -F'"' '{print $2}')
+    
     if [ -n "$SSID" ]; then
-        echo "W: ${SSID}"
+        # Extract signal level (e.g., 60/70)
+        SIGNAL_LEVEL=$(iwconfig $INTERFACE | grep "Signal level" | awk -F'=' '{print $2}' | awk '{print $1}')
+        
+        # Split the signal level into current and max values
+        CURRENT_SIGNAL=$(echo $SIGNAL_LEVEL | cut -d'/' -f1)
+        MAX_SIGNAL=$(echo $SIGNAL_LEVEL | cut -d'/' -f2)
+
+        # Calculate the percentage
+        if [ "$MAX_SIGNAL" -gt 0 ]; then
+            PERCENTAGE=$(echo "scale=0; ($CURRENT_SIGNAL * 100) / $MAX_SIGNAL" | bc)
+            echo "W: ${SSID} (${PERCENTAGE}%)"
+        else
+            # Fallback if max signal is not a valid number
+            echo "W: ${SSID}"
+        fi
     else
-        echo "W: Connected" # Connected but no SSID found (shouldn't happen often)
+        echo "W: Connected" # Connected but no SSID found
     fi
 else
     echo "W: Off"
 fi
-exit 0
 
+exit 0

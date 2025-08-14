@@ -8,21 +8,21 @@ STATUS=$(cat /sys/class/power_supply/${BATTERY_ID}/status)
 CAPACITY=$(cat /sys/class/power_supply/${BATTERY_ID}/capacity)
 
 if [ "$STATUS" = "Charging" ]; then
-    ICON="🔌"
+    ICON="CHR"
 elif [ "$STATUS" = "Discharging" ]; then
     if (( CAPACITY <= 10 )); then
-        ICON="🪫" # Low battery icon
+        ICON="LOW" # Low battery icon
     elif (( CAPACITY <= 30 )); then
-        ICON="🔋"
+        ICON="DIS"
     else
-        ICON="🔋"
+        ICON="DIS"
     fi
 elif [ "$STATUS" = "Full" ]; then
-    ICON="🔋"
+    ICON="IDLE"
 else
-    ICON="🔋" # Default icon
+    ICON="IDLE" # Default icon
 fi
 
-echo "${ICON} ${CAPACITY}%"
+echo "${BATTERY_ID}: ${ICON} ${CAPACITY}%"
 exit 0
 

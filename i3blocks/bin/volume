@@ -1,19 +1,21 @@
 #!/bin/bash
 # Script to display audio volume for i3blocks
-# Requires 'pamixer' (pulseaudio-utils)
+# Requires 'pactl'
 
-if command -v pamixer &>/dev/null; then
-    VOLUME=$(pamixer --get-volume)
-    MUTE_STATUS=$(pamixer --get-mute)
+if command -v pactl &>/dev/null; then
+    SINK=$(pactl get-default-sink)
+    VOLUME_INFO=$(pactl get-sink-volume "$SINK")
+    VOLUME=$(echo "$VOLUME_INFO" | grep -o -E '[0-9]+%' | head -n 1 | sed 's/%//')
+    
+    MUTE_STATUS=$(pactl get-sink-mute "$SINK")
 
-    if [ "$MUTE_STATUS" = "true" ]; then
-        echo "🔇 Muted"
+    if [ "$MUTE_STATUS" = "yes" ]; then
+        echo "MUTED"
     else
-        echo "🎶 ${VOLUME}%"
+        echo "VOL: ${VOLUME}%"
     fi
 else
-    echo "ERROR: pamixer not found"
+    echo "ERROR: pactl not found"
     exit 1
 fi
 exit 0
-
