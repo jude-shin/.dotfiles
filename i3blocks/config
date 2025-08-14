@@ -4,20 +4,13 @@
 # The i3blocks man page is a great resource.
 
 # General configuration, see i3blocks(1) for details.
-# i3blocks defaults to an interval of 1 second per block, it can be changed to something else,
-# which can reduce the system's battery usage.
+# i3blocks defaults to an interval of 1 second per block, it can be changed to something else, which can reduce the system's battery usage.
 interval=5
 separator=true
 separator_block_width=15
 
 # Global defaults for the blocks.
 # If you don't specify the script path, the script will be searched in $PATH.
-#
-# The script can be set to an absolute path, or a name.
-#
-# If the script has no interval, it will be executed only once at startup.
-# The script can also be triggered by a signal using the '-s SIGxxxx' option.
-# If the script prints multiple lines, only the first line will be displayed.
 
 # --- Battery Information ---
 # Battery BAT0
@@ -25,48 +18,36 @@ separator_block_width=15
 command=~/.dotfiles/i3blocks/bin/battery BAT0
 label=BAT0: 
 interval=30
-color=#81C784
 
 # Battery BAT1
 [battery_bat1]
 command=~/.dotfiles/i3blocks/bin/battery BAT1
 label=BAT1: 
 interval=30
-color=#81C784
 
 # --- Date and Time ---
 # Date
 [date]
-command=date '-%m-%d+%Y'
+command=date '+%m-%d-%Y'
 interval=30
-color=#B39DDB
 
 # Time
 [time]
-command=date '%H:%M:%S'
+command=date '+%H:%M:%S'
 interval=1
-color=#90CAF9
 
 # --- Network Information ---
 # Ethernet Internet Status
-[ethernet]
+[ethernete
 command=~/.dotfiles/i3blocks/bin/ethernet
 label=E: 
 interval=10
-color=#FFAB91
-# Requires a script named 'ethernet' in ~/.config/i3blocks/ or in your PATH.
-# Example 'ethernet' script:
-# ip a show dev enp0s31f6 | grep "inet " | awk '{print $2}' | cut -d/ -f1
 
 # Wireless Internet Status
 [wireless]
 command=~/.dotfiles/i3blocks/bin/wireless
 label=W: 
 interval=10
-color=#FFF176
-# Requires a script named 'wireless' in ~/.config/i3blocks/ or in your PATH.
-# Example 'wireless' script:
-# iwconfig wlan0 | grep -i --color "ssid" | cut -d":" -f2 | awk '{print $1}' | tr -d '"'
 
 # --- System Usage ---
 # CPU Percent Usage
@@ -74,17 +55,12 @@ color=#FFF176
 command=~/.dotfiles/i3blocks/bin/cpu_usage
 label=CPU: 
 interval=5
-color=#A1887F
-# Requires a script named 'cpu_usage' in ~/.config/i3blocks/ or in your PATH.
-# Example 'cpu_usage' script:
-# (grep 'cpu ' /proc/stat; sleep 0.5; grep 'cpu ' /proc/stat) | awk -v RS="" '{printf "%.2f\n", (($13-$2+$15-$4)*100)/($13-$2+$15-$4+$16-$5)}'
 
 # Harddrive Percent Usage
 [disk_usage]
 command=df -h /home | awk 'NR==2 {print $5}'
 label=HDD: 
 interval=30
-color=#DCE775
 
 # --- Audio and Brightness Control ---
 # Volume
@@ -93,10 +69,6 @@ command=~/.dotfiles/i3blocks/bin/volume
 label=VOL: 
 interval=1
 signal=10
-color=#80CBC4
-# Requires a script named 'volume' in ~/.config/i3blocks/ or in your PATH.
-# Example 'volume' script:
-# pamixer --get-volume | awk '{print $1"%"}'
 
 # Brightness
 [brightness]
@@ -104,8 +76,4 @@ command=~/.dotfiles/i3blocks/bin/brightnessctl
 label=BRIGHT: 
 interval=1
 signal=11
-color=#BDBDBD
-# Requires a script named 'brightnessctl' in ~/.config/i3blocks/ or in your PATH.
-# Example 'brightnessctl' script:
-# brightnessctl g | xargs printf "%.0f%%\n" $(brightnessctl m)/
 
