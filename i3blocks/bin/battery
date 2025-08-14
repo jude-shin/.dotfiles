@@ -1,0 +1,28 @@
+#!/bin/bash
+# Script to display battery status and percentage for i3blocks
+# Usage: battery <BATTERY_ID> (e.g., battery BAT0)
+
+BATTERY_ID=${1:-BAT0} # Default to BAT0 if no argument is given
+
+STATUS=$(cat /sys/class/power_supply/${BATTERY_ID}/status)
+CAPACITY=$(cat /sys/class/power_supply/${BATTERY_ID}/capacity)
+
+if [ "$STATUS" = "Charging" ]; then
+    ICON="🔌"
+elif [ "$STATUS" = "Discharging" ]; then
+    if (( CAPACITY <= 10 )); then
+        ICON="🪫" # Low battery icon
+    elif (( CAPACITY <= 30 )); then
+        ICON="🔋"
+    else
+        ICON="🔋"
+    fi
+elif [ "$STATUS" = "Full" ]; then
+    ICON="🔋"
+else
+    ICON="🔋" # Default icon
+fi
+
+echo "${ICON} ${CAPACITY}%"
+exit 0
+

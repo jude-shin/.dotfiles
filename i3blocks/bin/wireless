@@ -1,0 +1,17 @@
+#!/bin/bash
+# Script to display Wireless SSID for i3blocks
+
+INTERFACE="wlan0" # <--- IMPORTANT: Change this to your Wireless interface (e.g., wlp2s0)
+
+if iwconfig $INTERFACE | grep -q "ESSID:\""; then
+    SSID=$(iwconfig $INTERFACE | grep "ESSID" | awk -F'"' '{print $2}')
+    if [ -n "$SSID" ]; then
+        echo "W: ${SSID}"
+    else
+        echo "W: Connected" # Connected but no SSID found (shouldn't happen often)
+    fi
+else
+    echo "W: Off"
+fi
+exit 0
+

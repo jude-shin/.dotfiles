@@ -1,0 +1,20 @@
+#!/bin/bash
+# Script to display screen brightness for i3blocks
+# Requires 'brightnessctl'
+
+if command -v brightnessctl &>/dev/null; then
+    MAX_BRIGHTNESS=$(brightnessctl m)
+    CURRENT_BRIGHTNESS=$(brightnessctl g)
+
+    if [ "$MAX_BRIGHTNESS" -eq 0 ]; then
+        echo "💡 N/A" # Avoid division by zero if max brightness is 0
+    else
+        PERCENTAGE=$((CURRENT_BRIGHTNESS * 100 / MAX_BRIGHTNESS))
+        echo "💡 ${PERCENTAGE}%"
+    fi
+else
+    echo "ERROR: brightnessctl not found"
+    exit 1
+fi
+exit 0
+

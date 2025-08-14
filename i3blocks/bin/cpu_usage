@@ -1,0 +1,32 @@
+#!/bin/bash
+# Script to display CPU usage percentage for i3blocks
+
+# Get initial CPU times
+CPU_STAT1=($(cat /proc/stat | grep '^cpu '))
+TOTAL1=$((CPU_STAT1[1] + CPU_STAT1[2] + CPU_STAT1[3] + CPU_STAT1[4] + CPU_STAT1[5] + CPU_STAT1[6] + CPU_STAT1[7] + CPU_STAT1[8]))
+IDLE1=${CPU_STAT1[4]}
+
+# Wait for a short period
+sleep 0.5
+
+# Get second set of CPU times
+CPU_STAT2=($(cat /proc/stat | grep '^cpu '))
+TOTAL2=$((CPU_STAT2[1] + CPU_STAT2[2] + CPU_STAT2[3] + CPU_STAT2[4] + CPU_STAT2[5] + CPU_STAT2[6] + CPU_STAT2[7] + CPU_STAT2[8]))
+IDLE2=${CPU_STAT2[4]}
+
+# Calculate differences
+DIFF_TOTAL=$((TOTAL2 - TOTAL1))
+DIFF_IDLE=$((IDLE2 - IDLE1))
+
+# Avoid division by zero
+if [ "$DIFF_TOTAL" -eq 0 ]; then
+    echo "CPU: N/A"
+    exit 0
+fi
+
+# Calculate CPU usage
+CPU_USAGE=$(awk "BEGIN {printf \"%.0f\", (1 - $DIFF_IDLE / $DIFF_TOTAL) * 100}")
+
+echo "CPU: ${CPU_USAGE}%"
+exit 0
+
