@@ -38,7 +38,7 @@ interval=1
 
 # --- Network Information ---
 # Ethernet Internet Status
-[ethernete
+[ethernet]
 command=~/.dotfiles/i3blocks/bin/ethernet
 label=E: 
 interval=10
