@@ -20,13 +20,13 @@ DIFF_IDLE=$((IDLE2 - IDLE1))
 
 # Avoid division by zero
 if [ "$DIFF_TOTAL" -eq 0 ]; then
-    echo "CPU: N/A"
+    echo "N/A"
     exit 0
 fi
 
 # Calculate CPU usage
 CPU_USAGE=$(awk "BEGIN {printf \"%.0f\", (1 - $DIFF_IDLE / $DIFF_TOTAL) * 100}")
 
-echo "CPU: ${CPU_USAGE}%"
+echo "${CPU_USAGE}%"
 exit 0
 

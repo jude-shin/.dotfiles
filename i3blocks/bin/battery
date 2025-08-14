@@ -23,6 +23,6 @@ else
     ICON="IDLE" # Default icon
 fi
 
-echo "${BATTERY_ID}: ${ICON} ${CAPACITY}%"
+echo "${ICON} (${CAPACITY})%"
 exit 0
 

@@ -7,10 +7,10 @@ if command -v brightnessctl &>/dev/null; then
     CURRENT_BRIGHTNESS=$(brightnessctl g)
 
     if [ "$MAX_BRIGHTNESS" -eq 0 ]; then
-        echo "BRIGHT: N/A"
+        echo "N/A"
     else
         PERCENTAGE=$((CURRENT_BRIGHTNESS * 100 / MAX_BRIGHTNESS))
-        echo "BRIGHT: ${PERCENTAGE}%"
+        echo "${PERCENTAGE}%"
     fi
 else
     echo "ERROR: brightnessctl not found"

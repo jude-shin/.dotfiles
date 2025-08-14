@@ -6,12 +6,12 @@ INTERFACE="enp0s31f6" # <--- IMPORTANT: Change this to your Ethernet interface (
 if ip link show $INTERFACE | grep "state UP" &>/dev/null; then
     IP_ADDRESS=$(ip -4 addr show $INTERFACE | grep -oP 'inet \K[\d.]+')
     if [ -n "$IP_ADDRESS" ]; then
-        echo "E: ${IP_ADDRESS}"
+        echo "${IP_ADDRESS}"
     else
-        echo "E: No IP"
+        echo "No IP"
     fi
 else
-    echo "E: Down"
+    echo "Down"
 fi
 exit 0
 

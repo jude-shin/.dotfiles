@@ -12,7 +12,7 @@ if command -v pactl &>/dev/null; then
     if [ "$MUTE_STATUS" = "yes" ]; then
         echo "MUTED"
     else
-        echo "VOL: ${VOLUME}%"
+        echo "${VOLUME}%"
     fi
 else
     echo "ERROR: pactl not found"

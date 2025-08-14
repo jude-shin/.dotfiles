@@ -18,16 +18,16 @@ if iwconfig $INTERFACE | grep -q "ESSID:\""; then
         # Calculate the percentage
         if [ "$MAX_SIGNAL" -gt 0 ]; then
             PERCENTAGE=$(echo "scale=0; ($CURRENT_SIGNAL * 100) / $MAX_SIGNAL" | bc)
-            echo "W: ${SSID} (${PERCENTAGE}%)"
+            echo "${SSID} (${PERCENTAGE}%)"
         else
             # Fallback if max signal is not a valid number
-            echo "W: ${SSID}"
+            echo "${SSID}"
         fi
     else
-        echo "W: Connected" # Connected but no SSID found
+        echo "Connected" # Connected but no SSID found
     fi
 else
-    echo "W: Off"
+    echo "Off"
 fi
 
 exit 0

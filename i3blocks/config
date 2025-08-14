@@ -1,32 +1,3 @@
-# i3blocks configuration file
-#
-# The i3blocks man page describes the usage of the binary,
-# and its website describes the configuration:
-#
-#     https://vivien.github.io/i3blocks
-
-
-# Global properties
-separator=true
-separator_block_width=15
-
-[documentation]
-full_text=Documentation
-website=https://vivien.github.io/i3blocks
-command=xdg-open "$website"
-color=#f12711
-
-[greetings]
-color=#f5af19
-command=echo "Hello, $USER!"
-interval=once
-
-[time]
-command=date '-%m-%d+%Y %H:%M:%S'
-interval=1
-
-
-
 # i3blocks config file
 #
 # Please see man i3blocks for a complete reference!
@@ -36,6 +7,8 @@ interval=1
 # i3blocks defaults to an interval of 1 second per block, it can be changed to something else,
 # which can reduce the system's battery usage.
 interval=5
+separator=true
+separator_block_width=15
 
 # Global defaults for the blocks.
 # If you don't specify the script path, the script will be searched in $PATH.
@@ -50,27 +23,27 @@ interval=5
 # Battery BAT0
 [battery_bat0]
 command=~/.dotfiles/i3blocks/bin/battery BAT0
-label=⚡
+label=BAT0: 
 interval=30
 color=#81C784
 
 # Battery BAT1
 [battery_bat1]
 command=~/.dotfiles/i3blocks/bin/battery BAT1
-label=⚡
+label=BAT1: 
 interval=30
 color=#81C784
 
 # --- Date and Time ---
 # Date
 [date]
-command=date '+%Y-%m-%d'
+command=date '-%m-%d+%Y'
 interval=30
 color=#B39DDB
 
 # Time
 [time]
-command=date '+%H:%M:%S'
+command=date '%H:%M:%S'
 interval=1
 color=#90CAF9
 
@@ -78,7 +51,7 @@ color=#90CAF9
 # Ethernet Internet Status
 [ethernet]
 command=~/.dotfiles/i3blocks/bin/ethernet
-label=E:
+label=E: 
 interval=10
 color=#FFAB91
 # Requires a script named 'ethernet' in ~/.config/i3blocks/ or in your PATH.
@@ -88,7 +61,7 @@ color=#FFAB91
 # Wireless Internet Status
 [wireless]
 command=~/.dotfiles/i3blocks/bin/wireless
-label=W:
+label=W: 
 interval=10
 color=#FFF176
 # Requires a script named 'wireless' in ~/.config/i3blocks/ or in your PATH.
@@ -99,7 +72,7 @@ color=#FFF176
 # CPU Percent Usage
 [cpu_usage]
 command=~/.dotfiles/i3blocks/bin/cpu_usage
-label=CPU:
+label=CPU: 
 interval=5
 color=#A1887F
 # Requires a script named 'cpu_usage' in ~/.config/i3blocks/ or in your PATH.
@@ -109,7 +82,7 @@ color=#A1887F
 # Harddrive Percent Usage
 [disk_usage]
 command=df -h /home | awk 'NR==2 {print $5}'
-label=HDD:
+label=HDD: 
 interval=30
 color=#DCE775
 
@@ -117,7 +90,7 @@ color=#DCE775
 # Volume
 [volume]
 command=~/.dotfiles/i3blocks/bin/volume
-label=🎶
+label=VOL: 
 interval=1
 signal=10
 color=#80CBC4
@@ -128,7 +101,7 @@ color=#80CBC4
 # Brightness
 [brightness]
 command=~/.dotfiles/i3blocks/bin/brightnessctl
-label=💡
+label=BRIGHT: 
 interval=1
 signal=11
 color=#BDBDBD
