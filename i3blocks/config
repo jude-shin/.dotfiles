@@ -12,6 +12,19 @@ separator_block_width=15
 # Global defaults for the blocks.
 # If you don't specify the script path, the script will be searched in $PATH.
 
+# --- System Usage ---
+# CPU Percent Usage
+[cpu_usage]
+command=~/.dotfiles/i3blocks/bin/cpu_usage
+label=CPU: 
+interval=5
+
+# Harddrive Percent Usage
+[disk_usage]
+command=df -h /home | awk 'NR==2 {print $5}'
+label=HDD: 
+interval=30
+
 # --- Battery Information ---
 # Battery BAT0
 [battery_bat0]
@@ -25,17 +38,6 @@ command=~/.dotfiles/i3blocks/bin/battery BAT1
 label=BAT1: 
 interval=30
 
-# --- Date and Time ---
-# Date
-[date]
-command=date '+%m-%d-%Y'
-interval=30
-
-# Time
-[time]
-command=date '+%H:%M:%S'
-interval=1
-
 # --- Network Information ---
 # Ethernet Internet Status
 [ethernet]
@@ -48,19 +50,6 @@ interval=10
 command=~/.dotfiles/i3blocks/bin/wireless
 label=W: 
 interval=10
-
-# --- System Usage ---
-# CPU Percent Usage
-[cpu_usage]
-command=~/.dotfiles/i3blocks/bin/cpu_usage
-label=CPU: 
-interval=5
-
-# Harddrive Percent Usage
-[disk_usage]
-command=df -h /home | awk 'NR==2 {print $5}'
-label=HDD: 
-interval=30
 
 # --- Audio and Brightness Control ---
 # Volume
@@ -76,4 +65,15 @@ command=~/.dotfiles/i3blocks/bin/brightnessctl
 label=BRIGHT: 
 interval=1
 signal=11
+
+# --- Date and Time ---
+# Date
+[date]
+command=date '+%m-%d-%Y'
+interval=30
+
+# Time
+[time]
+command=date '+%H:%M:%S'
+interval=1
 
