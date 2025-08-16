@@ -45,7 +45,7 @@ exec --no-startup-id nm-applet
 # Keyboard repeat rate and delay
 exec_always --no-startup-id xset r rate 150 50
 
-exec_always autotiling
+exec_always --no-startup-id autotiling
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
