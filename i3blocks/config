@@ -30,13 +30,13 @@ interval=30
 [battery_bat0]
 command=~/.dotfiles/i3blocks/bin/battery BAT0
 label=BAT0: 
-interval=30
+interval=5
 
 # Battery BAT1
 [battery_bat1]
 command=~/.dotfiles/i3blocks/bin/battery BAT1
 label=BAT1: 
-interval=30
+interval=5
 
 # --- Network Information ---
 # Ethernet Internet Status
