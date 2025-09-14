@@ -10,7 +10,8 @@ ln -s "$HOME/.dotfiles/i3/" "$HOME/.config/i3"
 ln -s "$SRC" "$DST"
 
 ## TODO:
-make something for an ubuntu server (for lambda labs and for trent)
+- make something for an ubuntu server (for lambda labs and for trent)
+    - i HAVE no idea what this even means
 
 ## NOTE:
 #### **Vim:**
