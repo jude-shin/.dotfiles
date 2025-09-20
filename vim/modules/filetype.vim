@@ -9,6 +9,6 @@ augroup md
 augroup END
 augroup c
 	autocmd! 
-	autocmd FileType c set expandtab
-	autocmd FileType c set showmatch matchtime=1
+  autocmd BufEnter *.c,*.h set expandtab
+  autocmd BufEnter *.c,*.h set showmatch matchtime=1
 augroup END
