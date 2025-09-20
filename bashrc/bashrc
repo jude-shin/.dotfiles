@@ -2,6 +2,10 @@
 
 export $(envsubst < ~/.env)
 
+if [ "$USER" == 'jshin53' ]; then
+	TERM='xterm-color'
+fi
+
 source $HOME/.dotfiles/bashrc/aliases
 source $HOME/.dotfiles/bashrc/looknfeel
 source $HOME/.dotfiles/bashrc/tmux
