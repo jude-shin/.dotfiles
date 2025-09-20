@@ -11,7 +11,7 @@ elif [ "$USER" == 'storepass' ]; then
 	TMUX_CONF_NAME='storepass.conf'
 fi
 
-TMUX_CONFIG_PATH="~/.dotfiles/tmux/$TMUX_CONF_NAME"
+TMUX_CONFIG_PATH="$HOME/.dotfiles/tmux/$TMUX_CONF_NAME"
 alias tmux='tmux -f $TMUX_CONFIG_PATH'
 
 # if [[ -n "$XDG_CONFIG_HOME" ]]; then
