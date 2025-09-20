@@ -1,6 +1,7 @@
 filetype plugin on
 filetype indent on
 syntax on
+set colorcolumn=80
 
 " saves folds and loads folds automatically
 autocmd BufWinLeave *.* mkview
