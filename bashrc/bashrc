@@ -2,9 +2,9 @@
 
 export $(envsubst < ~/.env)
 
-source ./aliases
-source ./looknfeel
-source ./tmux
+source $HOME/.dotfiles/bashrc/aliases
+source $HOME/.dotfiles/bashrc/looknfeel
+source $HOME/.dotfiles/bashrc/tmux
 
 #################
 #   AUTOSTART   #
