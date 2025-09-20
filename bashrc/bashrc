@@ -3,7 +3,13 @@
 export $(envsubst < ~/.env)
 
 if [ "$USER" == 'jshin53' ]; then
-	TERM='xterm-color'
+	export TERM='xterm-color'
+	# have a env var that is unique
+	# this var will be referenced throughout all of the configs
+	# tmux, vim (no plugins), bash (for term color), setup.sh (to only install the big3)
+	# the env will be setup once in this bash config after you git pull depending on the system
+	# options: personal, simple
+	export JUDEDOTFILETYPE='simple'
 fi
 
 source $HOME/.dotfiles/bashrc/aliases
