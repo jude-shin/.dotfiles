@@ -1,0 +1,28 @@
+#!/bin/bash
+
+###############
+#   ALIASES   #
+###############
+# lockscreen
+if [ "$XDG_SESSION_TYPE" == 'wayland' ]; then
+	# lock
+	alias lock='hyprlock -q'
+elif [ "$XDG_SESSION_TYPE" == 'x11' ]; then
+	# lock
+	alias lock='i3lock'
+fi
+
+# trash-cli
+alias rm='trash-put --verbose'
+
+# icat: for image display in the terminal
+# NOTE: this probably no longer works
+# alias image='kitten icat'
+
+# personal scripts 
+alias schoolvpn='~/bin/schoolvpn.sh'
+
+# neomutt
+if [ "$USER" == 'jude' ]; then
+	alias nm='mailsync && neomutt'
+fi

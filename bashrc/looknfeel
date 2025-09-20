@@ -1,38 +1,8 @@
-# # ~/.bashrc # # If not running interactively, don't do anything [[ $- != *i* ]] && return
-
-
-if [ "$XDG_SESSION_TYPE" == 'wayland' ]; then
-	# lock
-	alias lock='hyprlock -q'
-elif [ "$XDG_SESSION_TYPE" == 'x11' ]; then
-	# lock
-	alias lock='i3lock'
-fi
-
-###############
-#   ALIASES   #
-###############
-
-# trash-cli
-alias rm='trash-put --verbose'
-
-# lockscreen 
-
-# icat: for image display in the terminal
-alias image='kitten icat'
-
-# personal scripts 
-alias schoolvpn='~/bin/schoolvpn.sh'
-
-# neomutt
-if [ "$USER" == 'jude' ]; then
-	alias nm='mailsync && neomutt'
-fi
+#!/bin/bash
 
 ##############
 #   COLORS   #
 ##############
-
 # ==============================
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
@@ -80,7 +50,6 @@ unset color_prompt
 ####################
 #   AUTOCOMPLETE   #
 ####################
-
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
@@ -88,55 +57,17 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
- 
 
-########################
-#   ENVIRONMENT VARS   #
-########################
+#############################
+#   PRIMARY PROMPT STRING   #
+#############################
+PS1='[\u@\h \W]\$ '
 
-export $(envsubst < ~/.env)
+###############
+#   HISTORY   #
+###############
 export HISTCONTROL=ignoreboth:erasedups
 export HISTFILESIZE=10000
 export HISTSIZE=10000
 
-PS1='[\u@\h \W]\$ '
-source /usr/share/nvm/init-nvm.sh
 
-
-###########
-#   fzf   #
-###########
-
-eval "$(fzf --bash)"
-
-
-############
-#   tmux   #
-############
-
-TMUX_CONF_NAME='base.conf'
-
-if [ "$USER" == 'jude' ]; then
-	TMUX_CONF_NAME='jude.conf'
-elif [ "$USER" == 'storepass' ]; then
-	TMUX_CONF_NAME='storepass.conf'
-fi
-
-TMUX_CONFIG_PATH="$XDG_CONFIG_HOME/tmux/$TMUX_CONF_NAME"
-tmux -f "$TMUX_CONFIG_PATH" attach-session -t general || tmux -f "$TMUX_CONFIG_PATH" new-session -s general
-clear # gets rid of the message that I am trying to nest my sessions, which I am not
-
-##############
-#   JEKYLL   #
-##############
-# eval "$(rbenv init -)"
-# export GEM_HOME="$HOME/gems"
-# export PATH="$HOME/gems/bin:$PATH"
-
-
-#################
-#   AUTOSTART   #
-#################
-
-clear
-cal -3

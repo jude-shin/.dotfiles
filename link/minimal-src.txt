@@ -1,0 +1,3 @@
+"$HOME/.dotfiles/bashrc/bashrc"
+"$HOME/.dotfiles/vim/"
+"$HOME/.dotfiles/tmux/"

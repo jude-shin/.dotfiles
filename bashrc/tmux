@@ -1,0 +1,26 @@
+#!/bin/bash
+
+############
+#   TMUX   #
+############
+TMUX_CONF_NAME='tmux.conf'
+
+if [ "$USER" == 'jude' ]; then
+	TMUX_CONF_NAME='jude.conf'
+elif [ "$USER" == 'storepass' ]; then
+	TMUX_CONF_NAME='storepass.conf'
+fi
+
+TMUX_CONFIG_PATH="~/.dotfiles/tmux/$TMUX_CONF_NAME"
+alias tmux='tmux -f $TMUX_CONFIG_PATH'
+
+# if [[ -n "$XDG_CONFIG_HOME" ]]; then
+# 	TMUX_CONFIG_PATH="$XDG_CONFIG_HOME/tmux/$TMUX_CONF_NAME"
+# else 
+# 	# the env is not set, we must resort to drastic measures
+# fi
+
+# do it the first time
+tmux -f "$TMUX_CONFIG_PATH" attach-session -t general || tmux -f "$TMUX_CONFIG_PATH" new-session -s general
+
+clear # gets rid of the message that I am trying to nest my sessions, which I am not

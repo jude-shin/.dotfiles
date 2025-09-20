@@ -1,0 +1,22 @@
+# # ~/.bashrc # # If not running interactively, don't do anything [[ $- != *i* ]] && return
+
+export $(envsubst < ~/.env)
+
+source ./aliases
+source ./looknfeel
+source ./tmux
+
+#################
+#   AUTOSTART   #
+#################
+# fxf
+eval "$(fzf --bash)"
+
+# nvm
+NVMPATH="/usr/share/nvm/init-nvm.sh"
+if test -f "$NVMPATH"; then
+	source "$FILE"
+fi
+
+clear
+cal -3
