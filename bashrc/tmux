@@ -12,13 +12,9 @@ elif [ "$USER" == 'storepass' ]; then
 fi
 
 TMUX_CONFIG_PATH="$HOME/.dotfiles/tmux/$TMUX_CONF_NAME"
-alias tmux='tmux -f $TMUX_CONFIG_PATH'
-
-# if [[ -n "$XDG_CONFIG_HOME" ]]; then
-# 	TMUX_CONFIG_PATH="$XDG_CONFIG_HOME/tmux/$TMUX_CONF_NAME"
-# else 
-# 	# the env is not set, we must resort to drastic measures
-# fi
+if [[ -n "$XDG_CONFIG_HOME" ]]; then
+	TMUX_CONFIG_PATH="$XDG_CONFIG_HOME/tmux/$TMUX_CONF_NAME"
+fi
 
 # do it the first time
 tmux -f "$TMUX_CONFIG_PATH" attach-session -t general || tmux -f "$TMUX_CONFIG_PATH" new-session -s general
