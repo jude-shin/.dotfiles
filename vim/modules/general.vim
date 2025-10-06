@@ -1,3 +1,7 @@
+" saves folds and loads folds automatically
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+
 filetype plugin on
 filetype indent on
 syntax on
@@ -5,10 +9,6 @@ set colorcolumn=80
 
 " prevent coc warnings from toggling the words on the screen
 set signcolumn=yes
-
-" saves folds and loads folds automatically
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
 
 " relative line numbers
 set relativenumber
