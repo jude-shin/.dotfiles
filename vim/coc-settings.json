@@ -12,6 +12,11 @@
     }
   },
 
+  "python.pythonPath": "./.venv/bin/python",
+  "python.venvPath": ".",
+  "pyright.disableLanguageServices": false,
+  "pyright.disableOrganizeImports": false,
+
 	"suggest.noselect": true,
 	"inlayHint.enable": false,
 	"diagnostic.enableVirtualText": true,
