@@ -10,5 +10,6 @@
   },
   "BACKGROUND_COLOR": "#121214",
   "SKIP_HOST_UPDATE": true,
-  "offloadAdmControls": false
+  "offloadAdmControls": true,
+  "enableHardwareAcceleration": true
 }

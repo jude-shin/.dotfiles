@@ -1,0 +1,20 @@
+{
+  "languageserver": {
+    "clangd": {
+      "command": "clangd",
+      "rootPatterns": ["compile_commands.json", ".git/", ".vscode/"],
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "args": [
+        "--background-index",
+        "--clang-tidy",
+        "--header-insertion=never"
+      ]
+    }
+  },
+
+	"suggest.noselect": true,
+	"inlayHint.enable": false,
+	"diagnostic.enableVirtualText": true,
+	"diagnostic.virtualTextCurrentLineOnly": true
+}
+

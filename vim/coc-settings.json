@@ -1,22 +1,4 @@
 {
-  "languageserver": {
-    "clangd": {
-      "command": "clangd",
-      "rootPatterns": ["compile_commands.json", ".git/", ".vscode/"],
-      "filetypes": ["c", "cpp", "objc", "objcpp"],
-      "args": [
-        "--background-index",
-        "--clang-tidy",
-        "--header-insertion=never"
-      ]
-    }
-  },
-
-  "python.pythonPath": "./.venv/bin/python",
-  "python.venvPath": ".",
-  "pyright.disableLanguageServices": false,
-  "pyright.disableOrganizeImports": false,
-
 	"suggest.noselect": true,
 	"inlayHint.enable": false,
 	"diagnostic.enableVirtualText": true,
