@@ -1,15 +1,16 @@
 {
   "chromiumSwitches": {},
-  "IS_MAXIMIZED": true,
+  "IS_MAXIMIZED": false,
   "IS_MINIMIZED": false,
   "WINDOW_BOUNDS": {
-    "x": 2008,
-    "y": 20,
-    "width": 940,
+    "x": 0,
+    "y": 0,
+    "width": 956,
     "height": 1036
   },
   "BACKGROUND_COLOR": "#121214",
   "SKIP_HOST_UPDATE": true,
   "offloadAdmControls": true,
-  "enableHardwareAcceleration": true
+  "enableHardwareAcceleration": true,
+  "asyncVideoInputDeviceInit": false
 }
