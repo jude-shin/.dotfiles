@@ -46,4 +46,6 @@ if [ -d "$xinitdir"/xinitrc.d ] ; then
 	unset f
 fi
 
+xset r rate 150 50
+
 exec i3
