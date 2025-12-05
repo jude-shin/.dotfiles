@@ -85,6 +85,9 @@ bindsym $mod+d exec "rofi -modi drun,run -show drun"
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# screenshot
+bindsym Print exec --no-startup-id flameshot gui
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
