@@ -13,7 +13,7 @@ elif [ "$XDG_SESSION_TYPE" == 'x11' ]; then
 fi
 
 # trash-cli
-alias rm='trash-put --verbose'
+# alias rm='trash-put --verbose'
 
 # icat: for image display in the terminal
 # NOTE: this probably no longer works
