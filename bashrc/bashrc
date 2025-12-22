@@ -25,7 +25,7 @@ eval "$(fzf --bash)"
 # nvm
 NVMPATH="/usr/share/nvm/init-nvm.sh"
 if test -f "$NVMPATH"; then
-	source "$FILE"
+	source "$NVMPATH"
 fi
 
 clear
