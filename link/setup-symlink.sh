@@ -27,6 +27,7 @@ DEFAULT_SRC_DIRS=(
     "$HOME/.dotfiles/i3/"
     "$HOME/.dotfiles/i3blocks/"
     "$HOME/.dotfiles/hypr/"
+    "$HOME/.dotfiles/xautocfg.cfg"
 )
 
 DEFAULT_DEST_DIRS=(
@@ -39,6 +40,7 @@ DEFAULT_DEST_DIRS=(
     "$HOME/.config/i3"
     "$HOME/.config/i3blocks"
     "$HOME/.config/hypr"
+    "$HOME/.config/xautocfg.cfg"
 )
 
 # Backup directory
