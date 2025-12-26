@@ -1,2 +1,6 @@
 #!/bin/bash
+# sets the wallpaper
 ~/.dotfiles/wallpapers/set.sh
+# redshifts everything after any autorandr switch is called 
+redshift -O 4500
+

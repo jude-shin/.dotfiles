@@ -31,18 +31,16 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Wallpaper (feh)
-exec --no-startup-id autorandr --change && $HOME/.dotfiles/wallpapers/set.sh
+exec --no-startup-id autorandr --change && ~/.dotfiles/wallpapers/set.sh
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# Keyboard repeat rate and delay
-# exec_always --no-startup-id xset r rate 150 50
+# Keyboard repeat rate and delay is handled with xautocfg
+# exec_always --no-startup-id xautocfg
 
 exec_always --no-startup-id autotiling
-
-exec_always --no-startup-id redshift -O 4500
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
