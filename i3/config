@@ -34,18 +34,18 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # have the wallpaper load only after the screens are configured
 
 # Wallpaper (feh)
-# exec_always --no-startup-id feh --bg-fill $HOME/.dotfiles/wallpapers/field.jpg
-
-exec --no-startup-id autorandr --change && feh --bg-fill $HOME/.dotfiles/wallpapers/cliff.jpg
+exec --no-startup-id autorandr --change && feh --bg-fill $HOME/.dotfiles/wallpapers/hopefull_mountain.jpg
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
 # Keyboard repeat rate and delay
-exec_always --no-startup-id xset r rate 150 50
+# exec_always --no-startup-id xset r rate 150 50
 
 exec_always --no-startup-id autotiling
+
+exec_always --no-startup-id redshift -O 4500
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
