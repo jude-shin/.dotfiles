@@ -1,11 +1,11 @@
 " ----- SETUP for vim-plug ---------------------------------------------
 call plug#begin('~/.config/vim/plugged/')
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
+" Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Olical/conjure' " 
 " Plug 'sheerun/vim-polyglot' " for linting of various languages... TODO: remove if it is slow?
 Plug 'morhetz/gruvbox'
-Plug 'junegunn/goyo.vim' " for simple text based writing
+" Plug 'junegunn/goyo.vim' " for simple text based writing
 call plug#end()
 
 " ----- MARKDOWN PREVIEW ---------------------------------------------
