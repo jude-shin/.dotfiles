@@ -26,3 +26,4 @@ alias schoolvpn='~/bin/schoolvpn.sh'
 if [ "$USER" == 'jude' ]; then
 	alias nm='mailsync && neomutt'
 fi
+

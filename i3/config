@@ -38,7 +38,7 @@ exec --no-startup-id autorandr --change && ~/.dotfiles/wallpapers/set.sh
 exec --no-startup-id nm-applet
 
 # Keyboard repeat rate and delay is handled with xautocfg
-# exec_always --no-startup-id xautocfg
+exec_always --no-startup-id xautocfg
 
 exec_always --no-startup-id autotiling
 
