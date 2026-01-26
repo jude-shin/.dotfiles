@@ -19,6 +19,9 @@ fi
 # NOTE: this probably no longer works
 # alias image='kitten icat'
 
+# To view large groups of images 
+alias image='nsxiv'
+
 # personal scripts 
 alias schoolvpn='~/bin/schoolvpn.sh'
 
