@@ -7,6 +7,9 @@ inoremap kj <esc>
 vnoremap kj <esc>
 cnoremap kj <C-C>
 
+" VISUAL SEARCH
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
 " BRACKET COMPLETION
 " inoremap { {}<Esc>ha
 " inoremap ( ()<Esc>ha
