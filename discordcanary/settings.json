@@ -1,6 +1,6 @@
 {
   "chromiumSwitches": {},
-  "IS_MAXIMIZED": false,
+  "IS_MAXIMIZED": true,
   "IS_MINIMIZED": false,
   "WINDOW_BOUNDS": {
     "x": 960,
@@ -12,5 +12,6 @@
   "SKIP_HOST_UPDATE": true,
   "offloadAdmControls": true,
   "enableHardwareAcceleration": true,
-  "asyncVideoInputDeviceInit": false
+  "asyncVideoInputDeviceInit": false,
+  "enableLibOpenH264Electron": false
 }
