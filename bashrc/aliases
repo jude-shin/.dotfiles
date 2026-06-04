@@ -12,6 +12,9 @@ elif [ "$XDG_SESSION_TYPE" == 'x11' ]; then
 	alias lock='i3lock'
 fi
 
+# list everything in a list
+alias ll='ls -l'
+
 # trash-cli
 # alias rm='trash-put --verbose'
 
