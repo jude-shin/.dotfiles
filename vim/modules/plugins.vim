@@ -6,7 +6,14 @@ Plug 'Olical/conjure' "
 " Plug 'sheerun/vim-polyglot' " for linting of various languages... TODO: remove if it is slow?
 Plug 'morhetz/gruvbox'
 " Plug 'junegunn/goyo.vim' " for simple text based writing
+Plug 'ianding1/leetcode.vim' " for leetcode in the terminal
+
 call plug#end()
+
+" ----- LEETCODE ---------------------------------------------
+let g:leetcode_browser = 'firefox'
+let g:leetcode_solution_filetype = 'python'
+let g:leetcode_hide_paid_only = 1
 
 " ----- MARKDOWN PREVIEW ---------------------------------------------
 let g:mkdp_auto_start = 1
