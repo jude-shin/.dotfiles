@@ -1,0 +1,5 @@
+require("config.general")
+require("config.keybindings")
+require("config.filetype")
+require("config.lazy")
+require("config.completion")
