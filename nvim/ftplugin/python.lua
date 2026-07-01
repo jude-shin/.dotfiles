@@ -14,13 +14,13 @@ end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
--- Pyright: type checking, import resolution, hover, go-to-definition,
--- completion, and project-aware Python diagnostics.
+-- basedpyright: Pyright-compatible type checking and Python language intelligence,
+-- installed from PyPI instead of npm.
 vim.lsp.start({
-  name = "pyright",
+  name = "basedpyright",
 
   cmd = {
-    vim.fn.expand("~/.local/share/nvim/mason/bin/pyright-langserver"),
+    "basedpyright-langserver",
     "--stdio",
   },
 
@@ -29,7 +29,7 @@ vim.lsp.start({
   capabilities = capabilities,
 
   settings = {
-    python = {
+    basedpyright = {
       analysis = {
         typeCheckingMode = "basic",
         autoSearchPaths = true,
@@ -41,7 +41,6 @@ vim.lsp.start({
 })
 
 -- Ruff: fast Python linting and import/style diagnostics.
--- This complements Pyright instead of replacing it.
 vim.lsp.start({
   name = "ruff",
 
